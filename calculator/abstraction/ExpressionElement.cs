@@ -1,10 +1,10 @@
-namespace charp_calculator.expression
+namespace charp_calculator.calculator.abstraction
 {
 
-    //
-    // Сводка:
-    //     Абстрактный класс для реализации паттерна
-    //     компоновщик.
+    /// <summary>
+    ///     Абстрактный класс для реализации паттерна
+    ///     компоновщик.
+    /// </summary>
     abstract class ExpressionElement
     {
         /* Метод отображения(используется для вывода элемента в консоль) */

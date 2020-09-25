@@ -1,6 +1,7 @@
 using System;
+using charp_calculator.calculator.abstraction;
 
-namespace charp_calculator.expression
+namespace charp_calculator.calculator
 {
 
     class ExpressionNumber : ExpressionElement

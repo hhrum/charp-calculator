@@ -1,0 +1,13 @@
+C:\IT\C#\charp-calculator\bin\Debug\netcoreapp3.1\charp-calculator.exe
+C:\IT\C#\charp-calculator\bin\Debug\netcoreapp3.1\charp-calculator.deps.json
+C:\IT\C#\charp-calculator\bin\Debug\netcoreapp3.1\charp-calculator.runtimeconfig.json
+C:\IT\C#\charp-calculator\bin\Debug\netcoreapp3.1\charp-calculator.runtimeconfig.dev.json
+C:\IT\C#\charp-calculator\bin\Debug\netcoreapp3.1\charp-calculator.dll
+C:\IT\C#\charp-calculator\bin\Debug\netcoreapp3.1\charp-calculator.pdb
+C:\IT\C#\charp-calculator\obj\Debug\netcoreapp3.1\charp-calculator.csprojAssemblyReference.cache
+C:\IT\C#\charp-calculator\obj\Debug\netcoreapp3.1\charp-calculator.AssemblyInfoInputs.cache
+C:\IT\C#\charp-calculator\obj\Debug\netcoreapp3.1\charp-calculator.AssemblyInfo.cs
+C:\IT\C#\charp-calculator\obj\Debug\netcoreapp3.1\charp-calculator.csproj.CoreCompileInputs.cache
+C:\IT\C#\charp-calculator\obj\Debug\netcoreapp3.1\charp-calculator.dll
+C:\IT\C#\charp-calculator\obj\Debug\netcoreapp3.1\charp-calculator.pdb
+C:\IT\C#\charp-calculator\obj\Debug\netcoreapp3.1\charp-calculator.genruntimeconfig.cache

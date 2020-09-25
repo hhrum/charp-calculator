@@ -1,8 +1,12 @@
 using System;
+using charp_calculator.calculator.abstraction;
 
-namespace charp_calculator.expression
+namespace charp_calculator.calculator.expression
 {
 
+    /// <summary>
+    /// Класс для реализации сложения
+    /// </summary>
     class PlusExpression : Expression
     {
         private ExpressionElement firstNumber;
