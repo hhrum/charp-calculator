@@ -1,13 +1,12 @@
 using System;
-using charp_calculator.calculator.abstraction;
 
-namespace charp_calculator.calculator.expression
+namespace charp_calculator.calculator.operation
 {
 
     /// <summary>
     /// Класс для реализации сложения
     /// </summary>
-    class PlusExpression : Expression
+    class PlusOperation : Operation
     {
         private ExpressionElement firstNumber;
         private ExpressionElement secondNumber;
@@ -15,14 +14,14 @@ namespace charp_calculator.calculator.expression
         public ExpressionElement FirstNumber { get; set; }
         public ExpressionElement SecondNumber { get; set; }
 
-        public PlusExpression() {}
+        public PlusOperation() {}
         
-        public PlusExpression(ExpressionElement firstNumber)
+        public PlusOperation(ExpressionElement firstNumber)
         {
             this.firstNumber = firstNumber;
         }
 
-        public PlusExpression(ExpressionElement firstNumber, ExpressionElement secondNumber) {
+        public PlusOperation(ExpressionElement firstNumber, ExpressionElement secondNumber) {
             this.firstNumber = firstNumber;
             this.secondNumber = secondNumber;
         }
@@ -34,9 +33,9 @@ namespace charp_calculator.calculator.expression
             secondNumber.Print();
         }
 
-        public override float CountUp()
+        public override float Calculate()
         {
-            return firstNumber.CountUp() + secondNumber.CountUp();
+            return firstNumber.Calculate() + secondNumber.Calculate();
         }
     }
 }

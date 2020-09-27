@@ -1,5 +1,4 @@
 using System;
-using charp_calculator.calculator.abstraction;
 
 namespace charp_calculator.calculator
 {
@@ -19,7 +18,7 @@ namespace charp_calculator.calculator
             Console.Write( number % 1 == 0 ? (int) number : number );
         }
 
-        public override float CountUp()
+        public override float Calculate()
         {
             return number;
         }

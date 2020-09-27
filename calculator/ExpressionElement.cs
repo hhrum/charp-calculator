@@ -1,4 +1,4 @@
-namespace charp_calculator.calculator.abstraction
+namespace charp_calculator.calculator
 {
 
     /// <summary>
@@ -11,7 +11,7 @@ namespace charp_calculator.calculator.abstraction
         abstract public void Print();
 
         /* Метод счёта */
-        abstract public float CountUp();
+        abstract public float Calculate();
 
     }
 }
