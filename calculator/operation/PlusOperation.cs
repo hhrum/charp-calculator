@@ -6,22 +6,22 @@ namespace charp_calculator.calculator.operation
     /// <summary>
     /// Класс для реализации сложения
     /// </summary>
-    class PlusOperation : Operation
+    class CalculatorPlus : CalculatorOperation
     {
-        private ExpressionElement firstNumber;
-        private ExpressionElement secondNumber;
+        private CalculatorElement firstNumber;
+        private CalculatorElement secondNumber;
 
-        public ExpressionElement FirstNumber { get; set; }
-        public ExpressionElement SecondNumber { get; set; }
+        public CalculatorElement FirstNumber { get; set; }
+        public CalculatorElement SecondNumber { get; set; }
 
-        public PlusOperation() {}
+        public CalculatorPlus() {}
         
-        public PlusOperation(ExpressionElement firstNumber)
+        public CalculatorPlus(CalculatorElement firstNumber)
         {
             this.firstNumber = firstNumber;
         }
 
-        public PlusOperation(ExpressionElement firstNumber, ExpressionElement secondNumber) {
+        public CalculatorPlus(CalculatorElement firstNumber, CalculatorElement secondNumber) {
             this.firstNumber = firstNumber;
             this.secondNumber = secondNumber;
         }

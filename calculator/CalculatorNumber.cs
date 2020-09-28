@@ -3,12 +3,12 @@ using System;
 namespace charp_calculator.calculator
 {
 
-    class ExpressionNumber : ExpressionElement
+    class CalculatorNumber : CalculatorElement
     {
         private float number;
         public float Number { get; }
 
-        public ExpressionNumber(float number)
+        public CalculatorNumber(float number)
         {
             this.number = number;
         }

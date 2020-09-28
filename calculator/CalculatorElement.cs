@@ -5,7 +5,7 @@ namespace charp_calculator.calculator
     ///     Абстрактный класс для реализации паттерна
     ///     компоновщик.
     /// </summary>
-    abstract class ExpressionElement
+    abstract class CalculatorElement
     {
         /* Метод отображения(используется для вывода элемента в консоль) */
         abstract public void Print();

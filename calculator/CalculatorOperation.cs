@@ -7,7 +7,7 @@ namespace charp_calculator.calculator
     /// Абстрактный класс, который расширяет абстракцию ExpressionElement
     /// для возможности добавления различных выражений.
     /// </summary>
-    abstract class Operation : ExpressionElement
+    abstract class CalculatorOperation : CalculatorElement
     {
 
     }
