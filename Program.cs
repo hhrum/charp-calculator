@@ -1,5 +1,7 @@
 ﻿using System;
-using charp_calculator.calculator.view.console;
+using charp_calculator.listener.console;
+using charp_calculator.event_channel;
+
 namespace charp_calculator
 {
     class Program
@@ -8,7 +10,8 @@ namespace charp_calculator
         {
             Console.WriteLine("Hello World!");
 
-            ConsoleListener listener = new ConsoleListener();
+            ExpressionEventChannel eventChannel = new ExpressionEventChannel();
+            ConsoleListener listener = new ConsoleListener(eventChannel);
 
             listener.Listen();
         }

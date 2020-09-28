@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 
-namespace charp_calculator.calculator.event_channel
+namespace charp_calculator.event_channel
 {
 
     public enum ExpressionEvent
     {
         Number,
+        Dote,
         Plus
     }
 
