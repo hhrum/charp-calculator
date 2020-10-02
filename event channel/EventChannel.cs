@@ -5,8 +5,10 @@ namespace charp_calculator.event_channel
 
     public enum ExpressionEvent
     {
+        Accept,
+        Remove,
         Number,
-        Dote,
+        Point,
         Plus
     }
 
@@ -18,7 +20,7 @@ namespace charp_calculator.event_channel
 
         void Subscribe(ExpressionEvent expressionEvent, SubscriberInterface subscriber);
 
-        void Publish(ExpressionEvent expressionEvent);
+        void Publish(ExpressionEvent expressionEvent, string data = "");
 
     }
 
@@ -47,11 +49,11 @@ namespace charp_calculator.event_channel
             }
         }
 
-        public void Publish(ExpressionEvent expressionEvent)
+        public void Publish(ExpressionEvent expressionEvent, string data = "")
         {
             if (events.TryGetValue(expressionEvent, out List<SubscriberInterface> subscribers))
                 foreach (var subscriber in subscribers)
-                    subscriber.Notify();
+                    subscriber.Notify(expressionEvent, data);
         }
 
     }
@@ -61,6 +63,6 @@ namespace charp_calculator.event_channel
     /// </summary>
     public interface SubscriberInterface
     {
-        void Notify(params object[] paramsList);
+        void Notify(ExpressionEvent expressionEvent, string data);
     }
 }

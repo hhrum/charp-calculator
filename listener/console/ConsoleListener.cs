@@ -13,9 +13,20 @@ namespace charp_calculator.listener.console
             do
             {
                 ConsoleKeyInfo userKey = Console.ReadKey(true);
-
+                
                 if (int.TryParse(userKey.KeyChar.ToString(), out int i)) NumberEvent(i);
-                else if(userKey.KeyChar.Equals(".") || userKey.KeyChar.Equals(",")) DoteEvent();
+                else if(userKey.KeyChar.Equals('.') || userKey.KeyChar.Equals(',')) PointEvent();
+                else if(userKey.Key == ConsoleKey.Enter) AcceptedEvent();
+                else if(userKey.Key == ConsoleKey.Backspace) RemoveEvent();
+                else
+                {
+                    switch (userKey.KeyChar)
+                    {
+                        case '+':
+                            PlusEvent();
+                            break;
+                    }
+                }
 
             } while (true);
         }

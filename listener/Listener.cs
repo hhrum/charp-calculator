@@ -19,17 +19,27 @@ namespace charp_calculator.listener
 
         protected void NumberEvent(int data)
         {
-            eventChannel.Publish(ExpressionEvent.Number);
+            eventChannel.Publish(ExpressionEvent.Number, data.ToString());
         }
 
-        protected void DoteEvent()
+        protected void PointEvent()
         {
-            eventChannel.Publish(ExpressionEvent.Dote);
+            eventChannel.Publish(ExpressionEvent.Point);
         }
 
         protected void PlusEvent()
         {
             eventChannel.Publish(ExpressionEvent.Plus);
+        }
+
+        protected void AcceptedEvent()
+        {
+            eventChannel.Publish(ExpressionEvent.Accept);
+        }
+
+        protected void RemoveEvent()
+        {
+            eventChannel.Publish(ExpressionEvent.Remove);
         }
         
     }
