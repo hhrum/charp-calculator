@@ -13,5 +13,9 @@ namespace charp_calculator.calculator
         /* Метод счёта */
         abstract public float Calculate();
 
+        virtual public int GetNextChildId()
+        {
+            return -1;
+        }
     }
 }

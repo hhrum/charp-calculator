@@ -9,6 +9,8 @@ namespace charp_calculator.calculator
     /// </summary>
     abstract class CalculatorOperation : CalculatorElement
     {
+        abstract public void Add(CalculatorElement number);
 
+        abstract public CalculatorElement Get(int id);
     }
 }

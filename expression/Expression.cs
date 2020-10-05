@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+
+using charp_calculator.calculator;
 using charp_calculator.event_channel;
 using charp_calculator.expression.operation;
 
@@ -41,6 +43,9 @@ namespace charp_calculator.expression
                 case ExpressionEvent.Plus:
                     AddPlus();
                     break;
+                case ExpressionEvent.Calculate:
+                    Calculate();
+                    return;
             }
 
             Show();
@@ -95,6 +100,15 @@ namespace charp_calculator.expression
             
             if (expression.Count() > 0) expression.Show();
             else Console.WriteLine("0");
+        }
+
+        public void Calculate()
+        {
+            Show();
+            // Console.Clear();
+
+            Calculator calculator = new Calculator(expression);
+            Console.Write("= " + calculator.Calculate());
         }
 
         /// ------------ Private ------------

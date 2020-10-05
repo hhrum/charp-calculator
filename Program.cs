@@ -23,6 +23,7 @@ namespace charp_calculator
             eventChannel.Subscribe(ExpressionEvent.Number, expression);
             eventChannel.Subscribe(ExpressionEvent.Point, expression);
             eventChannel.Subscribe(ExpressionEvent.Plus, expression);
+            eventChannel.Subscribe(ExpressionEvent.Calculate, expression);
 
             ConsoleListener listener = new ConsoleListener(eventChannel);
 

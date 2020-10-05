@@ -50,6 +50,11 @@ namespace charp_calculator.expression
             return elements[id];
         }
 
+        public List<ExpressionElement> GetExpression()
+        {
+            return elements;
+        }
+
         public int Count()
         {
             return elements.Count;

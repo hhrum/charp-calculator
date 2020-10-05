@@ -9,7 +9,8 @@ namespace charp_calculator.event_channel
         Remove,
         Number,
         Point,
-        Plus
+        Plus,
+        Calculate
     }
 
     /// <summary>

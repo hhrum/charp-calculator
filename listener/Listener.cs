@@ -41,6 +41,11 @@ namespace charp_calculator.listener
         {
             eventChannel.Publish(ExpressionEvent.Remove);
         }
+
+        protected void CalculateEvent()
+        {
+            eventChannel.Publish(ExpressionEvent.Calculate);
+        }
         
     }
 }

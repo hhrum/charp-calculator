@@ -22,5 +22,6 @@ namespace charp_calculator.calculator
         {
             return number;
         }
+
     }
 }
