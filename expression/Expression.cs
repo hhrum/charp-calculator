@@ -43,6 +43,9 @@ namespace charp_calculator.expression
                 case ExpressionEvent.Plus:
                     AddPlus();
                     break;
+                case ExpressionEvent.Minus:
+                    AddMinus();
+                    break;
                 case ExpressionEvent.Calculate:
                     Calculate();
                     return;
@@ -60,7 +63,7 @@ namespace charp_calculator.expression
         {
             var element = expression.Get();
 
-            if(element is ExpressionNumber && ((ExpressionNumber) element).isEmpty() == false) ((ExpressionNumber) element).Remove();
+            if (element is ExpressionNumber && ((ExpressionNumber)element).isEmpty() == false) ((ExpressionNumber)element).Remove();
             else expression.Remove(element);
         }
 
@@ -88,6 +91,14 @@ namespace charp_calculator.expression
             else expression.Add(new ExpressionPlus());
         }
 
+        public void AddMinus()
+        {
+            var element = expression.Get();
+
+            if (element is ExpressionOperation) UpdateOperation(new ExpressionMinus());
+            else expression.Add(new ExpressionMinus());
+        }
+
         public void Reset()
         {
             ids = new List<int>();
@@ -97,7 +108,7 @@ namespace charp_calculator.expression
         public void Show()
         {
             Console.Clear();
-            
+
             if (expression.Count() > 0) expression.Show();
             else Console.WriteLine("0");
         }

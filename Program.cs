@@ -18,12 +18,7 @@ namespace charp_calculator
             Expression expression = new Expression();
             ExpressionEventChannel eventChannel = new ExpressionEventChannel();
 
-            eventChannel.Subscribe(ExpressionEvent.Accept, expression);
-            eventChannel.Subscribe(ExpressionEvent.Remove, expression);
-            eventChannel.Subscribe(ExpressionEvent.Number, expression);
-            eventChannel.Subscribe(ExpressionEvent.Point, expression);
-            eventChannel.Subscribe(ExpressionEvent.Plus, expression);
-            eventChannel.Subscribe(ExpressionEvent.Calculate, expression);
+            eventChannel.Subscribe(expression);
 
             ConsoleListener listener = new ConsoleListener(eventChannel);
 

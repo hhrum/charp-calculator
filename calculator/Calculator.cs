@@ -27,11 +27,18 @@ namespace charp_calculator.calculator
         public void AddOperation(ExpressionOperation operation)
         {
             if (operation is ExpressionPlus) AddOperation((ExpressionPlus) operation);
+            else if (operation is ExpressionMinus) AddOperation((ExpressionMinus) operation);
         }
 
         public void AddOperation(ExpressionPlus operation)
         {
             calculator = new CalculatorPlus(calculator);
+            ids = new List<int>();
+        }
+
+        public void AddOperation(ExpressionMinus operation)
+        {
+            calculator = new CalculatorMinus(calculator);
             ids = new List<int>();
         }
 

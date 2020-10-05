@@ -31,6 +31,11 @@ namespace charp_calculator.listener
         {
             eventChannel.Publish(ExpressionEvent.Plus);
         }
+        
+        protected void MinusEvent()
+        {
+            eventChannel.Publish(ExpressionEvent.Minus);
+        }
 
         protected void AcceptedEvent()
         {

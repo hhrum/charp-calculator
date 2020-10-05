@@ -25,6 +25,9 @@ namespace charp_calculator.listener.console
                         case '+':
                             PlusEvent();
                             break;
+                        case '-':
+                            MinusEvent();
+                            break;
                         case '=':
                             CalculateEvent();
                             return;

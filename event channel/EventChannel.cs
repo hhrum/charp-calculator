@@ -10,6 +10,7 @@ namespace charp_calculator.event_channel
         Number,
         Point,
         Plus,
+        Minus,
         Calculate
     }
 
@@ -19,7 +20,7 @@ namespace charp_calculator.event_channel
     public interface ExpressionEventChannelInterface
     {
 
-        void Subscribe(ExpressionEvent expressionEvent, SubscriberInterface subscriber);
+        void Subscribe(SubscriberInterface subscriber);
 
         void Publish(ExpressionEvent expressionEvent, string data = "");
 
@@ -27,34 +28,22 @@ namespace charp_calculator.event_channel
 
     public class ExpressionEventChannel : ExpressionEventChannelInterface
     {
-        Dictionary<ExpressionEvent, List<SubscriberInterface>> events;
+        private List<SubscriberInterface> subscribers;
 
-        public ExpressionEventChannel() 
+        public ExpressionEventChannel()
         {
-            events = new Dictionary<ExpressionEvent, List<SubscriberInterface>>();
+            subscribers = new List<SubscriberInterface>();
         }
 
-        public void Subscribe(ExpressionEvent expressionEvent, SubscriberInterface subscriber)
+        public void Subscribe(SubscriberInterface subscriber)
         {
-            List<SubscriberInterface> subscribers;
-
-            if (events.TryGetValue(expressionEvent, out subscribers))
-            {
-                subscribers.Add(subscriber);
-            }
-            else
-            {
-                subscribers = new List<SubscriberInterface>();
-                subscribers.Add(subscriber);
-                events.Add(expressionEvent, subscribers);
-            }
+            subscribers.Add(subscriber);
         }
 
         public void Publish(ExpressionEvent expressionEvent, string data = "")
         {
-            if (events.TryGetValue(expressionEvent, out List<SubscriberInterface> subscribers))
-                foreach (var subscriber in subscribers)
-                    subscriber.Notify(expressionEvent, data);
+            foreach (var subscriber in subscribers)
+                subscriber.Notify(expressionEvent, data);
         }
 
     }
