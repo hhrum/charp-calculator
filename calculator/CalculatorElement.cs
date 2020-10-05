@@ -13,6 +13,8 @@ namespace charp_calculator.calculator
         /* Метод счёта */
         abstract public float Calculate();
 
+        abstract public CalculatorElement Clone();
+
         virtual public int GetNextChildId()
         {
             return -1;

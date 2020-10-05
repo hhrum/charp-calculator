@@ -23,5 +23,9 @@ namespace charp_calculator.calculator
             return number;
         }
 
+        public override CalculatorElement Clone()
+        {
+            return new CalculatorNumber(number);
+        }
     }
 }

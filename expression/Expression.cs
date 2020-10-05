@@ -41,10 +41,13 @@ namespace charp_calculator.expression
                     AddPoint();
                     break;
                 case ExpressionEvent.Plus:
-                    AddPlus();
+                    AddOperation(new ExpressionPlus());
                     break;
                 case ExpressionEvent.Minus:
-                    AddMinus();
+                    AddOperation(new ExpressionMinus());
+                    break;
+                case ExpressionEvent.Multiplicate:
+                    AddOperation(new ExpressionMultiplicate());
                     break;
                 case ExpressionEvent.Calculate:
                     Calculate();
@@ -83,20 +86,12 @@ namespace charp_calculator.expression
             else expression.Add(new ExpressionNumber(true));
         }
 
-        public void AddPlus()
+        public void AddOperation(ExpressionOperation operation)
         {
             var element = expression.Get();
 
-            if (element is ExpressionOperation) UpdateOperation(new ExpressionPlus());
-            else expression.Add(new ExpressionPlus());
-        }
-
-        public void AddMinus()
-        {
-            var element = expression.Get();
-
-            if (element is ExpressionOperation) UpdateOperation(new ExpressionMinus());
-            else expression.Add(new ExpressionMinus());
+            if (element is ExpressionOperation) UpdateOperation(operation);
+            else expression.Add(operation);
         }
 
         public void Reset()

@@ -11,6 +11,7 @@ namespace charp_calculator.event_channel
         Point,
         Plus,
         Minus,
+        Multiplicate,
         Calculate
     }
 

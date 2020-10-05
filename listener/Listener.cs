@@ -9,7 +9,7 @@ namespace charp_calculator.listener
     /// </summary>
     public abstract class Listener
     {
-        
+
         private ExpressionEventChannelInterface eventChannel;
 
         public Listener(ExpressionEventChannelInterface eventChannel)
@@ -31,10 +31,15 @@ namespace charp_calculator.listener
         {
             eventChannel.Publish(ExpressionEvent.Plus);
         }
-        
+
         protected void MinusEvent()
         {
             eventChannel.Publish(ExpressionEvent.Minus);
+        }
+
+        protected void MultiplicateEvent()
+        {
+            eventChannel.Publish(ExpressionEvent.Multiplicate);
         }
 
         protected void AcceptedEvent()
@@ -51,6 +56,6 @@ namespace charp_calculator.listener
         {
             eventChannel.Publish(ExpressionEvent.Calculate);
         }
-        
+
     }
 }
