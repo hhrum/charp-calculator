@@ -4,8 +4,6 @@ namespace charp_calculator.expression
     public class ExpressionNumber : ExpressionElement
     {
         private string number = "";
-        private bool isPointed = false;
-        private string fraction = "";
 
         public ExpressionNumber() {}
 
@@ -14,40 +12,27 @@ namespace charp_calculator.expression
             number = data;
         }
 
-        public ExpressionNumber(bool isPointed)
-        {
-            this.isPointed = isPointed;
-        }
-
         public void Add(string symbol)
         {
-            if (isPointed == false) number += symbol; 
-            else fraction += symbol;
-        }
-
-        public void AddPoint()
-        {
-            isPointed = true;
+            if (isEmpty() == false && symbol.Contains(",") && number.Contains(",")) return;
+            
+            number += symbol.Contains(",") && isEmpty() ? "0," : symbol; 
         }
         
         public void Remove()
         {
-            if (fraction.Length > 0) fraction = fraction.Remove(fraction.Length - 1);
-            else if (isPointed) isPointed = false;
-            else if (number.Length > 0 && isPointed == false) number = number.Remove(number.Length - 1);
+            if (number.Length != 0) number = number.Remove(number.Length - 1);
         }
 
         public bool isEmpty()
         {
-            return (number.Equals("")) && (isPointed == false || fraction.Equals(""));
+            return number.Equals("");
         }
 
-        public float Convert()
+        public double Convert()
         {
-            string num = isPointed ? number + "," + fraction : number;
-
-            if (float.TryParse(num, out float result)) return result;
-            else return 0f;
+            if (double.TryParse(number, out double result)) return result;
+            else return 0d;
 
         }
 

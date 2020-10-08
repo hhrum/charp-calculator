@@ -13,6 +13,11 @@ namespace charp_calculator.expression
         {
             elements = new List<ExpressionElement>();
         }
+        
+        public ExpressionContainer(List<ExpressionElement> elements)
+        {
+            this.elements = elements;
+        }
 
         public void Add(ExpressionElement element)
         {
@@ -41,7 +46,7 @@ namespace charp_calculator.expression
 
         public ExpressionElement Get()
         {
-            if (Count() > 0) return elements[elements.Count - 1];
+            if (Count() > 0) return Get(Count() - 1);
             else return null;
         }
 
