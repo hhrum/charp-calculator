@@ -50,7 +50,7 @@ namespace charp_calculator.expression
                     AddOperation(new ExpressionMultiplicate());
                     break;
                 case ExpressionEvent.Calculate:
-                    Calculate();
+                    //Calculate();
                     return;
             }
 
@@ -106,15 +106,6 @@ namespace charp_calculator.expression
 
             if (expression.Count() > 0) expression.Show();
             else Console.WriteLine("0");
-        }
-
-        public void Calculate()
-        {
-            Show();
-            // Console.Clear();
-
-            Calculator calculator = new Calculator(expression);
-            Console.Write("= " + calculator.Calculate());
         }
 
         /// ------------ Private ------------
