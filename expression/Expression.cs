@@ -49,6 +49,9 @@ namespace charp_calculator.expression
                 case ExpressionEvent.Multiplicate:
                     AddOperation(new ExpressionMultiplicate());
                     break;
+                case ExpressionEvent.Divide:
+                    AddOperation(new ExpressionDivide());
+                    break;
                 case ExpressionEvent.Calculate:
                     Calculate();
                     return;

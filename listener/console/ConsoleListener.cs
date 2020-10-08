@@ -31,6 +31,9 @@ namespace charp_calculator.listener.console
                         case '*':
                             MultiplicateEvent();
                             break;
+                        case '/':
+                            DivideEvent();
+                            break;
                         case '=':
                             CalculateEvent();
                             return;

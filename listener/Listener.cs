@@ -42,6 +42,11 @@ namespace charp_calculator.listener
             eventChannel.Publish(ExpressionEvent.Multiplicate);
         }
 
+        protected void DivideEvent()
+        {
+            eventChannel.Publish(ExpressionEvent.Divide);
+        }
+
         protected void AcceptedEvent()
         {
             eventChannel.Publish(ExpressionEvent.Accept);

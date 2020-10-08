@@ -12,6 +12,7 @@ namespace charp_calculator.event_channel
         Plus,
         Minus,
         Multiplicate,
+        Divide,
         Calculate
     }
 
